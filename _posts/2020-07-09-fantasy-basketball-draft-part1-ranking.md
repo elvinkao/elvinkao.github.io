@@ -14,7 +14,6 @@ My gripe with this strategy is it is not flexible and is not able to adapt based
 Below is a list of top players taken from https://www.fantraxhq.com/2019-fantasy-basketball-rankings/. The analyst here says that turnover category is not considered, but ranking is based on per-game production. I have always been curious if value of a player changes based on the size of the league. For eg, does having a player that over-indexes on shot blocking and provides nothing else more beneficial in a 4 person league than a 12 person league? 
 My problem with ranking based on overall production metric is that if there are many players that over index in assists and steals and few that over index in rebounds and blocks, then you may miss the underlying value of players.
 
-![](/images/logo.png "fast.ai's logo")
 ![](/images/nba_draft_order.PNG "Draft Rankings 2019-2020")
 
 #### An Alternative
