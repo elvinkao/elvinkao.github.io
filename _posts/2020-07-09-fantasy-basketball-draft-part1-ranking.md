@@ -14,7 +14,7 @@ My gripe with this strategy is it is not flexible and is not able to adapt based
 Below is a list of top players taken from https://www.fantraxhq.com/2019-fantasy-basketball-rankings/. The analyst here says that turnover category is not considered, but ranking is based on per-game production. I have always been curious if value of a player changes based on the size of the league. For eg, does having a player that over-indexes on shot blocking and provides nothing else more beneficial in a 4 person league than a 12 person league? 
 My problem with ranking based on overall production metric is that if there are many players that over index in assists and steals and few that over index in rebounds and blocks, then you may miss the underlying value of players.
 
-<img src="images/nba_draft_order.png" width="600"/>
+![](/images/nba_draft_order.PNG "Draft Rankings 2019-2020")
 
 #### An Alternative
 
@@ -50,27 +50,6 @@ players = pd.read_csv('2019-2020_players.csv')
     [2020-07-07 16:16:56,901 DEBUG] [yahoo_oauth.oauth.token_is_valid] ELAPSED TIME : 22.219847440719604
     [2020-07-07 16:16:56,902 DEBUG] [yahoo_oauth.oauth.token_is_valid] TOKEN IS STILL VALID
     
-
-
-```python
-#hide
-players = players.drop(columns=['Unnamed: 36'])
-# Get names with single quotes
-single_quote_df = players[players['Player'].str.contains("'")]
-# Remove single quote player names from players dataframe
-players = players[~players.Player.isin(single_quote_df.Player)]
-
-players = players.replace({'DJ Augustin':'D.J. Augustin'
-               , 'Juan Hernangomez':'Juancho Hernangomez'
-               , 'PJ Tucker':'P.J. Tucker'
-               , 'Sviatoslav Mykhailiuk':'Svi Mykhailiuk'
-               , 'TJ McConnell':'T.J. McConnell'
-               , 'TJ Warren':'T.J. Warren'
-               , 'Wesley Iwundu':'Wes Iwundu'})
-
-# Change Maurice Harkless to Moe Harkless
-players = players.replace({'Maurice Harkless':'Moe Harkless'})
-```
 
 Add dummy variables for each player based on whether they are eligible for a position. 
 
@@ -133,38 +112,6 @@ players['is_util'] = is_util
 
 ```
 
-
-```python
-#hide
-#d'agengelo: PG, SG
-#de'aaron: PG
-#de'andre: SF
-#de'anthony: PG, SG
-#deandre': SF
-#devonte' PG, SG
-#e'twaun: SG, SF
-#royce: SF
-is_g = [1,1,0,1,0,1,1,0]
-is_pg = [1,1,0,1,0,1,0,0]
-is_sg = [1,0,0,1,0,1,1,0]
-is_f = [0,0,1,0,1,0,1,1]
-is_sf = [0,0,1,0,1,0,1,1]
-is_pf = [0,0,0,0,0,0,0,0]
-is_c = [0,0,0,0,0,0,0,0]
-is_util = [1,1,1,1,1,1,1,1]
-
-single_quote_df['is_g'] = is_g
-single_quote_df['is_pg'] = is_pg
-single_quote_df['is_sg'] = is_sg
-single_quote_df['is_f'] = is_f
-single_quote_df['is_sf'] = is_sf
-single_quote_df['is_pf'] = is_pf
-single_quote_df['is_c'] = is_c
-single_quote_df['is_util'] = is_util
-
-players = pd.concat([players,single_quote_df])
-players.to_csv('2019-2020_players_with_positions.csv')
-```
 
 Here we have our player 2019-2020 stat summary that we will be using. It has their 9 categories, in addition to FGM, FGA, FTM, FTA, 3PTM, 3PTA. The volume of shots in these categories influences the team performance for FG%, FT%, and 3PT%. So unless you can translate volume and percentage into a single variable, it would not be possible to do linear optimization. Another reason I found to run simulations.
 
@@ -615,163 +562,6 @@ def fantasy_player_rank(num_teams, simulations):
 players = pd.read_csv('2019-2020_players_with_positions.csv')
 players = players.drop(columns=['Unnamed: 0'])
 ```
-
-
-```python
-fantasy_6teams = fantasy_player_rank(6,1000)
-```
-
-    Current progress: 100.0 %
-    Current run time: 7.76 minutes
-    Exptected run time: 7.76 minutes
-    Number of teams: 6
-    Num Trim Players: 14
-    Number of rows in eligible players dataframe: 160
-    Minimum times player has been drafted in eligible num_player_drafted dataframe: 297
-    Number of rows in num_player_drafted: 160
-    
-
-
-```python
-fantasy_6teams.sort_values(by=['cat_perc'], ascending=False).head(10)
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Player</th>
-      <th>cat_win</th>
-      <th>cat_loss</th>
-      <th>matchup_win</th>
-      <th>matchup_loss</th>
-      <th>cat_perc</th>
-      <th>matchup_perc</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>12</th>
-      <td>Anthony Davis</td>
-      <td>4513.0</td>
-      <td>3134.0</td>
-      <td>1302.0</td>
-      <td>898.0</td>
-      <td>0.590166</td>
-      <td>0.591818</td>
-    </tr>
-    <tr>
-      <th>132</th>
-      <td>James Harden</td>
-      <td>3339.0</td>
-      <td>2968.0</td>
-      <td>949.0</td>
-      <td>851.0</td>
-      <td>0.529412</td>
-      <td>0.527222</td>
-    </tr>
-    <tr>
-      <th>115</th>
-      <td>Hassan Whiteside</td>
-      <td>3362.0</td>
-      <td>3039.0</td>
-      <td>953.0</td>
-      <td>872.0</td>
-      <td>0.525230</td>
-      <td>0.522192</td>
-    </tr>
-    <tr>
-      <th>165</th>
-      <td>Kawhi Leonard</td>
-      <td>3127.0</td>
-      <td>2843.0</td>
-      <td>876.0</td>
-      <td>814.0</td>
-      <td>0.523786</td>
-      <td>0.518343</td>
-    </tr>
-    <tr>
-      <th>143</th>
-      <td>Jimmy Butler</td>
-      <td>2990.0</td>
-      <td>2799.0</td>
-      <td>850.0</td>
-      <td>810.0</td>
-      <td>0.516497</td>
-      <td>0.512048</td>
-    </tr>
-    <tr>
-      <th>164</th>
-      <td>Karl-Anthony Towns</td>
-      <td>3254.0</td>
-      <td>3122.0</td>
-      <td>928.0</td>
-      <td>887.0</td>
-      <td>0.510351</td>
-      <td>0.511295</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Andre Drummond</td>
-      <td>3679.0</td>
-      <td>3581.0</td>
-      <td>1053.0</td>
-      <td>1032.0</td>
-      <td>0.506749</td>
-      <td>0.505036</td>
-    </tr>
-    <tr>
-      <th>69</th>
-      <td>Deandre Ayton</td>
-      <td>3129.0</td>
-      <td>3086.0</td>
-      <td>887.0</td>
-      <td>898.0</td>
-      <td>0.503459</td>
-      <td>0.496919</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>Ben Simmons</td>
-      <td>2570.0</td>
-      <td>2555.0</td>
-      <td>728.0</td>
-      <td>717.0</td>
-      <td>0.501463</td>
-      <td>0.503806</td>
-    </tr>
-    <tr>
-      <th>108</th>
-      <td>Giannis Antetokounmpo</td>
-      <td>2847.0</td>
-      <td>2855.0</td>
-      <td>822.0</td>
-      <td>803.0</td>
-      <td>0.499298</td>
-      <td>0.505846</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
 
 
 ```python
@@ -1357,7 +1147,7 @@ pd.read_csv('parallel_result.csv').drop(columns=['Unnamed: 0']).head(20)
 
 
 # Parallel Time Improvement
-The parallel run improved the run time for the 2000 simulations from 884 seconds to 217 seconds. That is a more than 4 times improvement. Draft time usually allows for 2 minutes per round, so will need to run slightly less simulations, but as teams become filled and number of permutations decreases, it will need less simulations to become accurate. 
+The parallel run improved the run time for the 2000 simulations from 1000 seconds to 253 seconds. That is a 4x improvement. Draft time usually allows for 2 minutes per round, so will need to run slightly less simulations, but as teams become filled and number of permutations decreases, it will need less simulations to become accurate. 
 
 ### Top Fantasy Players 2019-2020 Season
 I have ran simulations for all players and here are the rankings for 6-team, 8-team, 10-team, 12-team, 14-team leagues.
