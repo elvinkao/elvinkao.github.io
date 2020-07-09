@@ -15,7 +15,7 @@ Below is a list of top players taken from https://www.fantraxhq.com/2019-fantasy
 My problem with ranking based on overall production metric is that if there are many players that over index in assists and steals and few that over index in rebounds and blocks, then you may miss the underlying value of players.
 
 ![](/images/logo.png "fast.ai's logo")
-![](/images/nba_draft_order.png)
+![](/images/nba_draft_order.PNG "Draft Rankings 2019-2020)
 
 #### An Alternative
 
