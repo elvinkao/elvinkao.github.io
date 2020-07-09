@@ -10,8 +10,8 @@ title: Elvin Kao
 description: Elvin Kao's Exploration Repo
 github_username: elvinkao
 
-url: elvinkao.com
-baseurl: elvinkao.com
+url: "elvinkao.com"
+baseurl: "" # the subpath of yoru site
 
 # Email and twitter are optional:
 email:
