@@ -1,4 +1,4 @@
-## Yahoo Fantasy Basketball Draft Part 1 - Snake draft value / best available player
+# Yahoo Fantasy Basketball Draft Part 1 - Snake draft value / best available player
 
 Year after year, I have been part of a NBA fantasy league. Year after year, I have been losing. Not just losing, but not even making the playoffs. Imagine someone who's career is in data analytics, completely failing at something where evaluating data is key. Well, I have had enough and there is only so much pounding a person can take. ENOUGH!
 
