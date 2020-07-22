@@ -240,7 +240,7 @@ def run_simulations(self, num_teams):
 
 ### Test Run
 Unfortunately, because of Covid, a lot of the mock nba fantasy draft applications are currently down. I have did a short test run.
-> youtube: https://youtu.be/O2Cq3FFWLkA
+[![](http://img.youtube.com/vi/O2Cq3FFWLkA/0.jpg)](http://www.youtube.com/watch?v=O2Cq3FFWLkA "")
 
 I drafted the players in order in last post with 10,000 simulations in a 6 person league. I have set the time limit to 30 seconds and with the 2nd pick, the best player in 201 simulations was Ben Simmons with a category win percentage of 72% against random sample for other teams. Then going through the ranks under 10,000 simulations, the 3rd pick with 151 simulations was Mikal Bridges with category win percentage of 43%. That would mean I would now have a losing winning percentage. That changed rather quickly. It is clear that running under simulations under this current format is just not fast enough to choose the right person and under small sample, at pick 2, choosing the wrong person was very consequential. This tool will be more effective with 2 minute draft times and during later stages when optimizing for player categories. 
 
