@@ -464,8 +464,8 @@ def create_teams(num_teams, eligible_players):
                     hh_match_loss += 1
 
             # Add heads up category totals
-            hh_cat_win = hh_cat_win + hh_match_win
-            hh_cat_loss = hh_cat_loss + hh_match_loss  
+            hh_cat_win = hh_cat_win + hhwins
+            hh_cat_loss = hh_cat_loss + hhlosses
 
         # when current team match over append scores
         cat_win.append(hh_cat_win)
@@ -617,202 +617,102 @@ fantasy_6teams_2ndrun.sort_values(by=['cat_perc'], ascending=False).head(20)
     <tr>
       <th>12</th>
       <td>Anthony Davis</td>
-      <td>11283.0</td>
-      <td>9251.0</td>
-      <td>3213.0</td>
-      <td>2657.0</td>
-      <td>0.549479</td>
-      <td>0.547359</td>
+      <td>11200.0</td>
+      <td>7745.0</td>
+      <td>1510.0</td>
+      <td>595.0</td>
+      <td>0.591185</td>
+      <td>0.717340</td>
     </tr>
     <tr>
       <th>132</th>
       <td>James Harden</td>
-      <td>8985.0</td>
-      <td>9125.0</td>
-      <td>2572.0</td>
-      <td>2598.0</td>
-      <td>0.496135</td>
-      <td>0.497485</td>
+      <td>9009.0</td>
+      <td>6246.0</td>
+      <td>1210.0</td>
+      <td>485.0</td>
+      <td>0.590560</td>
+      <td>0.713864</td>
     </tr>
     <tr>
       <th>165</th>
       <td>Kawhi Leonard</td>
-      <td>9147.0</td>
-      <td>9536.0</td>
-      <td>2628.0</td>
-      <td>2712.0</td>
-      <td>0.489589</td>
-      <td>0.492135</td>
-    </tr>
-    <tr>
-      <th>115</th>
-      <td>Hassan Whiteside</td>
-      <td>8261.0</td>
-      <td>8997.0</td>
-      <td>2357.0</td>
-      <td>2543.0</td>
-      <td>0.478677</td>
-      <td>0.481020</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>Ben Simmons</td>
-      <td>7473.0</td>
-      <td>8491.0</td>
-      <td>2149.0</td>
-      <td>2436.0</td>
-      <td>0.468116</td>
-      <td>0.468702</td>
-    </tr>
-    <tr>
-      <th>186</th>
-      <td>Kyrie Irving</td>
-      <td>8454.0</td>
-      <td>9699.0</td>
-      <td>2408.0</td>
-      <td>2752.0</td>
-      <td>0.465708</td>
-      <td>0.466667</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Andre Drummond</td>
-      <td>9026.0</td>
-      <td>10748.0</td>
-      <td>2589.0</td>
-      <td>3076.0</td>
-      <td>0.456458</td>
-      <td>0.457017</td>
-    </tr>
-    <tr>
-      <th>147</th>
-      <td>John Collins</td>
-      <td>9572.0</td>
-      <td>11463.0</td>
-      <td>2757.0</td>
-      <td>3258.0</td>
-      <td>0.455051</td>
-      <td>0.458354</td>
-    </tr>
-    <tr>
-      <th>143</th>
-      <td>Jimmy Butler</td>
-      <td>8781.0</td>
-      <td>10519.0</td>
-      <td>2531.0</td>
-      <td>2989.0</td>
-      <td>0.454974</td>
-      <td>0.458514</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>Clint Capela</td>
-      <td>9491.0</td>
-      <td>11413.0</td>
-      <td>2714.0</td>
-      <td>3266.0</td>
-      <td>0.454028</td>
-      <td>0.453846</td>
-    </tr>
-    <tr>
-      <th>228</th>
-      <td>Nikola Jokic</td>
-      <td>9586.0</td>
-      <td>11699.0</td>
-      <td>2769.0</td>
-      <td>3341.0</td>
-      <td>0.450364</td>
-      <td>0.453191</td>
-    </tr>
-    <tr>
-      <th>108</th>
-      <td>Giannis Antetokounmpo</td>
-      <td>7949.0</td>
-      <td>9991.0</td>
-      <td>2295.0</td>
-      <td>2845.0</td>
-      <td>0.443088</td>
-      <td>0.446498</td>
-    </tr>
-    <tr>
-      <th>69</th>
-      <td>Deandre Ayton</td>
-      <td>7795.0</td>
-      <td>9929.0</td>
-      <td>2224.0</td>
-      <td>2826.0</td>
-      <td>0.439799</td>
-      <td>0.440396</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>Bam Adebayo</td>
-      <td>9036.0</td>
-      <td>11527.0</td>
-      <td>2609.0</td>
-      <td>3286.0</td>
-      <td>0.439430</td>
-      <td>0.442578</td>
+      <td>8779.0</td>
+      <td>6296.0</td>
+      <td>1176.0</td>
+      <td>499.0</td>
+      <td>0.582355</td>
+      <td>0.702090</td>
     </tr>
     <tr>
       <th>164</th>
       <td>Karl-Anthony Towns</td>
-      <td>7776.0</td>
-      <td>9930.0</td>
-      <td>2231.0</td>
-      <td>2809.0</td>
-      <td>0.439173</td>
-      <td>0.442659</td>
+      <td>9562.0</td>
+      <td>7043.0</td>
+      <td>1255.0</td>
+      <td>590.0</td>
+      <td>0.575851</td>
+      <td>0.680217</td>
     </tr>
     <tr>
-      <th>149</th>
-      <td>Jonathan Isaac</td>
-      <td>7684.0</td>
-      <td>9837.0</td>
-      <td>2209.0</td>
-      <td>2811.0</td>
-      <td>0.438559</td>
-      <td>0.440040</td>
+      <th>186</th>
+      <td>Kyrie Irving</td>
+      <td>8814.0</td>
+      <td>6666.0</td>
+      <td>1169.0</td>
+      <td>551.0</td>
+      <td>0.569380</td>
+      <td>0.679651</td>
     </tr>
     <tr>
       <th>52</th>
       <td>Damian Lillard</td>
-      <td>7053.0</td>
-      <td>9051.0</td>
-      <td>2014.0</td>
-      <td>2541.0</td>
-      <td>0.437966</td>
-      <td>0.442151</td>
+      <td>7750.0</td>
+      <td>5885.0</td>
+      <td>1020.0</td>
+      <td>495.0</td>
+      <td>0.568390</td>
+      <td>0.673267</td>
     </tr>
     <tr>
-      <th>254</th>
-      <td>Rudy Gobert</td>
-      <td>7480.0</td>
-      <td>9990.0</td>
-      <td>2107.0</td>
-      <td>2868.0</td>
-      <td>0.428163</td>
-      <td>0.423518</td>
+      <th>147</th>
+      <td>John Collins</td>
+      <td>10536.0</td>
+      <td>8274.0</td>
+      <td>1341.0</td>
+      <td>749.0</td>
+      <td>0.560128</td>
+      <td>0.641627</td>
     </tr>
     <tr>
-      <th>247</th>
-      <td>Richaun Holmes</td>
-      <td>8621.0</td>
-      <td>11591.0</td>
-      <td>2496.0</td>
-      <td>3309.0</td>
-      <td>0.426529</td>
-      <td>0.429974</td>
+      <th>241</th>
+      <td>Paul George</td>
+      <td>7955.0</td>
+      <td>6445.0</td>
+      <td>1015.0</td>
+      <td>585.0</td>
+      <td>0.552431</td>
+      <td>0.634375</td>
     </tr>
     <tr>
-      <th>146</th>
-      <td>Joel Embiid</td>
-      <td>8585.0</td>
-      <td>11608.0</td>
-      <td>2446.0</td>
-      <td>3364.0</td>
-      <td>0.425147</td>
-      <td>0.420998</td>
+      <th>283</th>
+      <td>Trae Young</td>
+      <td>7171.0</td>
+      <td>5834.0</td>
+      <td>915.0</td>
+      <td>530.0</td>
+      <td>0.551403</td>
+      <td>0.633218</td>
+    </tr>
+    <tr>
+      <th>192</th>
+      <td>LeBron James</td>
+      <td>11333.0</td>
+      <td>9277.0</td>
+      <td>1440.0</td>
+      <td>850.0</td>
+      <td>0.549879</td>
+      <td>0.628821</td>
     </tr>
   </tbody>
 </table>
@@ -943,202 +843,202 @@ pd.read_csv('parallel_result.csv').drop(columns=['Unnamed: 0']).head(20)
     <tr>
       <th>0</th>
       <td>Anthony Davis</td>
-      <td>7733.0</td>
-      <td>4688.0</td>
-      <td>2196.0</td>
-      <td>1359.0</td>
-      <td>0.622575</td>
-      <td>0.617722</td>
+      <td>17520.0</td>
+      <td>11080.0</td>
+      <td>2218.0</td>
+      <td>1357.0</td>
+      <td>0.612587</td>
+      <td>0.620420</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Kawhi Leonard</td>
-      <td>5543.0</td>
-      <td>4315.0</td>
-      <td>1581.0</td>
-      <td>1254.0</td>
-      <td>0.562284</td>
-      <td>0.557672</td>
+      <td>James Harden</td>
+      <td>12132.0</td>
+      <td>8508.0</td>
+      <td>1445.0</td>
+      <td>1135.0</td>
+      <td>0.587791</td>
+      <td>0.560078</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>James Harden</td>
-      <td>5366.0</td>
-      <td>4192.0</td>
-      <td>1534.0</td>
-      <td>1196.0</td>
-      <td>0.561415</td>
-      <td>0.561905</td>
+      <td>Kawhi Leonard</td>
+      <td>12492.0</td>
+      <td>8908.0</td>
+      <td>1471.0</td>
+      <td>1204.0</td>
+      <td>0.583738</td>
+      <td>0.549907</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Hassan Whiteside</td>
-      <td>5564.0</td>
-      <td>4428.0</td>
-      <td>1569.0</td>
-      <td>1276.0</td>
-      <td>0.556845</td>
-      <td>0.551494</td>
+      <td>Kyrie Irving</td>
+      <td>13217.0</td>
+      <td>9463.0</td>
+      <td>1556.0</td>
+      <td>1279.0</td>
+      <td>0.582760</td>
+      <td>0.548854</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Jimmy Butler</td>
-      <td>5147.0</td>
-      <td>4140.0</td>
-      <td>1457.0</td>
-      <td>1178.0</td>
-      <td>0.554216</td>
-      <td>0.552941</td>
+      <td>John Collins</td>
+      <td>16638.0</td>
+      <td>12002.0</td>
+      <td>1972.0</td>
+      <td>1608.0</td>
+      <td>0.580936</td>
+      <td>0.550838</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>Kyrie Irving</td>
-      <td>5155.0</td>
-      <td>4201.0</td>
-      <td>1475.0</td>
-      <td>1190.0</td>
-      <td>0.550983</td>
-      <td>0.553471</td>
+      <td>Hassan Whiteside</td>
+      <td>12553.0</td>
+      <td>9247.0</td>
+      <td>1487.0</td>
+      <td>1238.0</td>
+      <td>0.575826</td>
+      <td>0.545688</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>Ben Simmons</td>
-      <td>4312.0</td>
-      <td>3613.0</td>
-      <td>1232.0</td>
-      <td>1033.0</td>
-      <td>0.544101</td>
-      <td>0.543929</td>
+      <td>Jimmy Butler</td>
+      <td>12365.0</td>
+      <td>9355.0</td>
+      <td>1419.0</td>
+      <td>1296.0</td>
+      <td>0.569291</td>
+      <td>0.522652</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>John Collins</td>
-      <td>6924.0</td>
-      <td>5824.0</td>
-      <td>1968.0</td>
-      <td>1667.0</td>
-      <td>0.543144</td>
-      <td>0.541403</td>
+      <td>Nikola Jokic</td>
+      <td>16066.0</td>
+      <td>12254.0</td>
+      <td>1865.0</td>
+      <td>1675.0</td>
+      <td>0.567302</td>
+      <td>0.526836</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>Nikola Jokic</td>
-      <td>6680.0</td>
-      <td>5669.0</td>
-      <td>1912.0</td>
-      <td>1608.0</td>
-      <td>0.540934</td>
-      <td>0.543182</td>
+      <td>Chris Paul</td>
+      <td>9703.0</td>
+      <td>7457.0</td>
+      <td>1124.0</td>
+      <td>1021.0</td>
+      <td>0.565443</td>
+      <td>0.524009</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>Deandre Ayton</td>
-      <td>5479.0</td>
-      <td>4887.0</td>
-      <td>1545.0</td>
-      <td>1405.0</td>
-      <td>0.528555</td>
-      <td>0.523729</td>
+      <td>Karl-Anthony Towns</td>
+      <td>12902.0</td>
+      <td>9938.0</td>
+      <td>1496.0</td>
+      <td>1359.0</td>
+      <td>0.564886</td>
+      <td>0.523993</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>Giannis Antetokounmpo</td>
-      <td>4672.0</td>
-      <td>4192.0</td>
-      <td>1349.0</td>
-      <td>1206.0</td>
-      <td>0.527076</td>
-      <td>0.527984</td>
+      <td>Bradley Beal</td>
+      <td>9490.0</td>
+      <td>7390.0</td>
+      <td>1073.0</td>
+      <td>1037.0</td>
+      <td>0.562204</td>
+      <td>0.508531</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>Clint Capela</td>
-      <td>6564.0</td>
-      <td>6008.0</td>
-      <td>1867.0</td>
-      <td>1728.0</td>
-      <td>0.522113</td>
-      <td>0.519332</td>
+      <td>Damian Lillard</td>
+      <td>10021.0</td>
+      <td>7819.0</td>
+      <td>1133.0</td>
+      <td>1097.0</td>
+      <td>0.561715</td>
+      <td>0.508072</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>Karl-Anthony Towns</td>
-      <td>5331.0</td>
-      <td>4980.0</td>
-      <td>1526.0</td>
-      <td>1394.0</td>
-      <td>0.517021</td>
-      <td>0.522603</td>
+      <td>Deandre Ayton</td>
+      <td>12189.0</td>
+      <td>9531.0</td>
+      <td>1406.0</td>
+      <td>1309.0</td>
+      <td>0.561188</td>
+      <td>0.517864</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>Damian Lillard</td>
-      <td>4020.0</td>
-      <td>3860.0</td>
-      <td>1148.0</td>
-      <td>1102.0</td>
-      <td>0.510152</td>
-      <td>0.510222</td>
+      <td>Richaun Holmes</td>
+      <td>16545.0</td>
+      <td>13055.0</td>
+      <td>1846.0</td>
+      <td>1854.0</td>
+      <td>0.558953</td>
+      <td>0.498919</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>Andre Drummond</td>
-      <td>6508.0</td>
-      <td>6261.0</td>
-      <td>1851.0</td>
-      <td>1769.0</td>
-      <td>0.509672</td>
-      <td>0.511326</td>
+      <td>Giannis Antetokounmpo</td>
+      <td>11715.0</td>
+      <td>9245.0</td>
+      <td>1394.0</td>
+      <td>1226.0</td>
+      <td>0.558922</td>
+      <td>0.532061</td>
     </tr>
     <tr>
       <th>15</th>
-      <td>Rudy Gobert</td>
-      <td>5073.0</td>
-      <td>4896.0</td>
-      <td>1439.0</td>
-      <td>1381.0</td>
-      <td>0.508878</td>
-      <td>0.510284</td>
+      <td>Jonathan Isaac</td>
+      <td>12010.0</td>
+      <td>9510.0</td>
+      <td>1386.0</td>
+      <td>1304.0</td>
+      <td>0.558086</td>
+      <td>0.515242</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>Jonathan Isaac</td>
-      <td>4628.0</td>
-      <td>4500.0</td>
-      <td>1308.0</td>
-      <td>1287.0</td>
-      <td>0.507011</td>
-      <td>0.504046</td>
+      <td>Andre Drummond</td>
+      <td>16652.0</td>
+      <td>13188.0</td>
+      <td>1962.0</td>
+      <td>1768.0</td>
+      <td>0.558043</td>
+      <td>0.526005</td>
     </tr>
     <tr>
       <th>17</th>
-      <td>Joel Embiid</td>
-      <td>6155.0</td>
-      <td>5996.0</td>
-      <td>1780.0</td>
-      <td>1710.0</td>
-      <td>0.506543</td>
-      <td>0.510029</td>
+      <td>Clint Capela</td>
+      <td>15562.0</td>
+      <td>12358.0</td>
+      <td>1767.0</td>
+      <td>1723.0</td>
+      <td>0.557378</td>
+      <td>0.506304</td>
     </tr>
     <tr>
       <th>18</th>
       <td>DeMar DeRozan</td>
-      <td>5191.0</td>
-      <td>5124.0</td>
-      <td>1476.0</td>
-      <td>1464.0</td>
-      <td>0.503248</td>
-      <td>0.502041</td>
+      <td>12458.0</td>
+      <td>9902.0</td>
+      <td>1369.0</td>
+      <td>1426.0</td>
+      <td>0.557156</td>
+      <td>0.489803</td>
     </tr>
     <tr>
       <th>19</th>
-      <td>Chris Paul</td>
-      <td>3859.0</td>
-      <td>3863.0</td>
-      <td>1085.0</td>
-      <td>1130.0</td>
-      <td>0.499741</td>
-      <td>0.489842</td>
+      <td>Ben Simmons</td>
+      <td>9960.0</td>
+      <td>7920.0</td>
+      <td>1137.0</td>
+      <td>1098.0</td>
+      <td>0.557047</td>
+      <td>0.508725</td>
     </tr>
   </tbody>
 </table>
@@ -1219,7 +1119,7 @@ team6_rank_df[['6-team']].merge(team8_rank_df[['8-team']], left_index=True, righ
     </tr>
     <tr>
       <th>1</th>
-      <td>Kawhi Leonard</td>
+      <td>James Harden</td>
       <td>Kawhi Leonard</td>
       <td>Kawhi Leonard</td>
       <td>Kawhi Leonard</td>
@@ -1227,787 +1127,787 @@ team6_rank_df[['6-team']].merge(team8_rank_df[['8-team']], left_index=True, righ
     </tr>
     <tr>
       <th>2</th>
+      <td>Kawhi Leonard</td>
       <td>James Harden</td>
       <td>James Harden</td>
-      <td>James Harden</td>
-      <td>James Harden</td>
+      <td>Kyrie Irving</td>
       <td>James Harden</td>
     </tr>
     <tr>
       <th>3</th>
+      <td>Kyrie Irving</td>
+      <td>Kyrie Irving</td>
       <td>Hassan Whiteside</td>
-      <td>Hassan Whiteside</td>
-      <td>Hassan Whiteside</td>
-      <td>Hassan Whiteside</td>
+      <td>James Harden</td>
       <td>Kyrie Irving</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>John Collins</td>
+      <td>Hassan Whiteside</td>
+      <td>Hassan Whiteside</td>
       <td>Kyrie Irving</td>
-      <td>Kyrie Irving</td>
-      <td>Kyrie Irving</td>
+      <td>Hassan Whiteside</td>
       <td>Hassan Whiteside</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>Kyrie Irving</td>
-      <td>Jimmy Butler</td>
+      <td>John Collins</td>
+      <td>John Collins</td>
       <td>John Collins</td>
       <td>Jimmy Butler</td>
-      <td>John Collins</td>
+      <td>Jimmy Butler</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>Giannis Antetokounmpo</td>
-      <td>John Collins</td>
+      <td>Jimmy Butler</td>
+      <td>Jimmy Butler</td>
       <td>Jimmy Butler</td>
       <td>John Collins</td>
-      <td>Giannis Antetokounmpo</td>
+      <td>John Collins</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>Jimmy Butler</td>
-      <td>Giannis Antetokounmpo</td>
-      <td>Ben Simmons</td>
-      <td>Giannis Antetokounmpo</td>
-      <td>Jimmy Butler</td>
+      <td>Nikola Jokic</td>
+      <td>Jonathan Isaac</td>
+      <td>Nikola Jokic</td>
+      <td>Nikola Jokic</td>
+      <td>Jonathan Isaac</td>
     </tr>
     <tr>
       <th>8</th>
+      <td>Damian Lillard</td>
+      <td>Nikola Jokic</td>
+      <td>Deandre Ayton</td>
       <td>Karl-Anthony Towns</td>
       <td>Karl-Anthony Towns</td>
-      <td>Giannis Antetokounmpo</td>
-      <td>Andre Drummond</td>
-      <td>Ben Simmons</td>
     </tr>
     <tr>
       <th>9</th>
+      <td>Deandre Ayton</td>
+      <td>Damian Lillard</td>
+      <td>Karl-Anthony Towns</td>
+      <td>Deandre Ayton</td>
       <td>Nikola Jokic</td>
-      <td>Andre Drummond</td>
-      <td>Karl-Anthony Towns</td>
-      <td>Karl-Anthony Towns</td>
-      <td>Andre Drummond</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>Ben Simmons</td>
-      <td>Nikola Jokic</td>
-      <td>Nikola Jokic</td>
-      <td>Nikola Jokic</td>
-      <td>Nikola Jokic</td>
+      <td>Karl-Anthony Towns</td>
+      <td>Karl-Anthony Towns</td>
+      <td>Damian Lillard</td>
+      <td>Damian Lillard</td>
+      <td>Deandre Ayton</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>Andre Drummond</td>
-      <td>Deandre Ayton</td>
-      <td>Deandre Ayton</td>
+      <td>Jonathan Isaac</td>
+      <td>Chris Paul</td>
+      <td>Giannis Antetokounmpo</td>
+      <td>Jonathan Isaac</td>
       <td>Ben Simmons</td>
-      <td>Deandre Ayton</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>Deandre Ayton</td>
+      <td>DeMar DeRozan</td>
+      <td>Giannis Antetokounmpo</td>
       <td>Ben Simmons</td>
-      <td>Andre Drummond</td>
-      <td>Deandre Ayton</td>
+      <td>Ben Simmons</td>
       <td>Clint Capela</td>
     </tr>
     <tr>
       <th>13</th>
       <td>Bam Adebayo</td>
-      <td>Jonathan Isaac</td>
-      <td>Clint Capela</td>
-      <td>Jonathan Isaac</td>
-      <td>Karl-Anthony Towns</td>
+      <td>Richaun Holmes</td>
+      <td>Chris Paul</td>
+      <td>Chris Paul</td>
+      <td>Damian Lillard</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>Clint Capela</td>
-      <td>Bam Adebayo</td>
-      <td>Joel Embiid</td>
-      <td>Rudy Gobert</td>
-      <td>Jonathan Isaac</td>
+      <td>LeBron James</td>
+      <td>Deandre Ayton</td>
+      <td>DeMar DeRozan</td>
+      <td>Richaun Holmes</td>
+      <td>Chris Paul</td>
     </tr>
     <tr>
       <th>15</th>
+      <td>Giannis Antetokounmpo</td>
       <td>DeMar DeRozan</td>
+      <td>Richaun Holmes</td>
       <td>Clint Capela</td>
-      <td>LeBron James</td>
-      <td>Clint Capela</td>
-      <td>Joel Embiid</td>
+      <td>Giannis Antetokounmpo</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>Joel Embiid</td>
-      <td>Damian Lillard</td>
-      <td>Rudy Gobert</td>
-      <td>Bam Adebayo</td>
+      <td>Chris Paul</td>
+      <td>Andre Drummond</td>
       <td>LeBron James</td>
+      <td>Giannis Antetokounmpo</td>
+      <td>DeMar DeRozan</td>
     </tr>
     <tr>
       <th>17</th>
-      <td>Damian Lillard</td>
-      <td>LeBron James</td>
-      <td>Jonathan Isaac</td>
+      <td>Richaun Holmes</td>
+      <td>Clint Capela</td>
       <td>Joel Embiid</td>
-      <td>Chris Paul</td>
+      <td>Rudy Gobert</td>
+      <td>Andre Drummond</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>Jonathan Isaac</td>
+      <td>Clint Capela</td>
       <td>Joel Embiid</td>
-      <td>Chris Paul</td>
-      <td>Damian Lillard</td>
-      <td>Damian Lillard</td>
+      <td>Jonathan Isaac</td>
+      <td>DeMar DeRozan</td>
+      <td>Richaun Holmes</td>
     </tr>
     <tr>
       <th>19</th>
-      <td>LeBron James</td>
+      <td>Rudy Gobert</td>
+      <td>Bam Adebayo</td>
+      <td>Clint Capela</td>
+      <td>Andre Drummond</td>
       <td>Russell Westbrook</td>
-      <td>Damian Lillard</td>
-      <td>LeBron James</td>
-      <td>DeMar DeRozan</td>
     </tr>
     <tr>
       <th>20</th>
-      <td>Chris Paul</td>
-      <td>Richaun Holmes</td>
-      <td>Russell Westbrook</td>
-      <td>DeMar DeRozan</td>
-      <td>Rudy Gobert</td>
+      <td>Ben Simmons</td>
+      <td>Ben Simmons</td>
+      <td>Andre Drummond</td>
+      <td>Bam Adebayo</td>
+      <td>LeBron James</td>
     </tr>
     <tr>
       <th>21</th>
-      <td>Richaun Holmes</td>
-      <td>Nikola Vucevic</td>
-      <td>Richaun Holmes</td>
-      <td>Chris Paul</td>
-      <td>Richaun Holmes</td>
+      <td>Russell Westbrook</td>
+      <td>LeBron James</td>
+      <td>Bam Adebayo</td>
+      <td>LeBron James</td>
+      <td>Joel Embiid</td>
     </tr>
     <tr>
       <th>22</th>
-      <td>Rudy Gobert</td>
-      <td>DeMar DeRozan</td>
+      <td>Andre Drummond</td>
+      <td>LaMarcus Aldridge</td>
+      <td>LaMarcus Aldridge</td>
+      <td>Joel Embiid</td>
       <td>Bam Adebayo</td>
-      <td>Russell Westbrook</td>
-      <td>Russell Westbrook</td>
     </tr>
     <tr>
       <th>23</th>
-      <td>Russell Westbrook</td>
-      <td>Chris Paul</td>
-      <td>DeMar DeRozan</td>
       <td>Jayson Tatum</td>
-      <td>Bam Adebayo</td>
+      <td>Rudy Gobert</td>
+      <td>Russell Westbrook</td>
+      <td>Bradley Beal</td>
+      <td>Rudy Gobert</td>
     </tr>
     <tr>
       <th>24</th>
-      <td>Nikola Vucevic</td>
+      <td>Devin Booker</td>
+      <td>Russell Westbrook</td>
       <td>Rudy Gobert</td>
-      <td>Nikola Vucevic</td>
-      <td>Richaun Holmes</td>
-      <td>Nikola Vucevic</td>
+      <td>Russell Westbrook</td>
+      <td>LaMarcus Aldridge</td>
     </tr>
     <tr>
       <th>25</th>
       <td>LaMarcus Aldridge</td>
-      <td>LaMarcus Aldridge</td>
-      <td>LaMarcus Aldridge</td>
-      <td>LaMarcus Aldridge</td>
-      <td>Luka Doncic</td>
+      <td>Nikola Vucevic</td>
+      <td>Bradley Beal</td>
+      <td>Khris Middleton</td>
+      <td>Bradley Beal</td>
     </tr>
     <tr>
       <th>26</th>
-      <td>Bradley Beal</td>
-      <td>Luka Doncic</td>
-      <td>Bradley Beal</td>
+      <td>Joel Embiid</td>
+      <td>Devin Booker</td>
       <td>Nikola Vucevic</td>
-      <td>LaMarcus Aldridge</td>
+      <td>Jayson Tatum</td>
+      <td>Nikola Vucevic</td>
     </tr>
     <tr>
       <th>27</th>
-      <td>Brandon Ingram</td>
+      <td>Khris Middleton</td>
       <td>Jayson Tatum</td>
-      <td>Luka Doncic</td>
-      <td>Bradley Beal</td>
+      <td>Khris Middleton</td>
+      <td>Nikola Vucevic</td>
       <td>Jayson Tatum</td>
     </tr>
     <tr>
       <th>28</th>
+      <td>Shai Gilgeous-Alexander</td>
+      <td>Pascal Siakam</td>
       <td>Devin Booker</td>
-      <td>Khris Middleton</td>
-      <td>Jayson Tatum</td>
-      <td>Khris Middleton</td>
+      <td>LaMarcus Aldridge</td>
       <td>Khris Middleton</td>
     </tr>
     <tr>
       <th>29</th>
-      <td>Luka Doncic</td>
-      <td>Brandon Ingram</td>
+      <td>Nikola Vucevic</td>
       <td>Khris Middleton</td>
-      <td>Domantas Sabonis</td>
-      <td>Bradley Beal</td>
+      <td>Stephen Curry</td>
+      <td>Devin Booker</td>
+      <td>Devin Booker</td>
     </tr>
     <tr>
       <th>30</th>
-      <td>Domantas Sabonis</td>
-      <td>Bradley Beal</td>
       <td>Jrue Holiday</td>
+      <td>Luka Doncic</td>
+      <td>Trae Young</td>
+      <td>Brandon Ingram</td>
+      <td>Brandon Ingram</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Bradley Beal</td>
+      <td>Stephen Curry</td>
+      <td>Luka Doncic</td>
+      <td>Stephen Curry</td>
+      <td>Luka Doncic</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Brandon Ingram</td>
+      <td>Jrue Holiday</td>
+      <td>Kyle Lowry</td>
+      <td>Jrue Holiday</td>
+      <td>Stephen Curry</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Stephen Curry</td>
+      <td>Brandon Ingram</td>
+      <td>Fred VanVleet</td>
+      <td>Shai Gilgeous-Alexander</td>
+      <td>Jrue Holiday</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Luka Doncic</td>
+      <td>Bradley Beal</td>
+      <td>Pascal Siakam</td>
+      <td>Domantas Sabonis</td>
+      <td>Shai Gilgeous-Alexander</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Gordon Hayward</td>
+      <td>Shai Gilgeous-Alexander</td>
+      <td>Jayson Tatum</td>
       <td>Luka Doncic</td>
       <td>Pascal Siakam</td>
     </tr>
     <tr>
-      <th>31</th>
-      <td>Shai Gilgeous-Alexander</td>
-      <td>Domantas Sabonis</td>
-      <td>Pascal Siakam</td>
-      <td>Brandon Ingram</td>
-      <td>Brandon Ingram</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>Khris Middleton</td>
-      <td>Jrue Holiday</td>
-      <td>Domantas Sabonis</td>
-      <td>Devin Booker</td>
-      <td>Shai Gilgeous-Alexander</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>Pascal Siakam</td>
-      <td>Pascal Siakam</td>
-      <td>Devin Booker</td>
-      <td>Pascal Siakam</td>
-      <td>Domantas Sabonis</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>Kristaps Porzingis</td>
-      <td>Devin Booker</td>
-      <td>Shai Gilgeous-Alexander</td>
-      <td>Kristaps Porzingis</td>
-      <td>Devin Booker</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>Jrue Holiday</td>
-      <td>Shai Gilgeous-Alexander</td>
-      <td>Brandon Ingram</td>
-      <td>Jrue Holiday</td>
-      <td>Kyle Lowry</td>
-    </tr>
-    <tr>
       <th>36</th>
-      <td>Jayson Tatum</td>
-      <td>Kristaps Porzingis</td>
-      <td>Kristaps Porzingis</td>
-      <td>Stephen Curry</td>
-      <td>Kristaps Porzingis</td>
+      <td>Jonas Valanciunas</td>
+      <td>Trae Young</td>
+      <td>Shai Gilgeous-Alexander</td>
+      <td>Mitchell Robinson</td>
+      <td>Domantas Sabonis</td>
     </tr>
     <tr>
       <th>37</th>
       <td>Fred VanVleet</td>
-      <td>Mitchell Robinson</td>
-      <td>Kyle Lowry</td>
-      <td>Kyle Lowry</td>
-      <td>Jrue Holiday</td>
+      <td>Fred VanVleet</td>
+      <td>Brandon Ingram</td>
+      <td>Pascal Siakam</td>
+      <td>Gordon Hayward</td>
     </tr>
     <tr>
       <th>38</th>
-      <td>Kyle Lowry</td>
-      <td>Kyle Lowry</td>
-      <td>Stephen Curry</td>
-      <td>Gordon Hayward</td>
+      <td>Domantas Sabonis</td>
+      <td>Kristaps Porzingis</td>
+      <td>Jrue Holiday</td>
+      <td>Trae Young</td>
       <td>Mitchell Robinson</td>
     </tr>
     <tr>
       <th>39</th>
-      <td>Gordon Hayward</td>
-      <td>Stephen Curry</td>
-      <td>Gordon Hayward</td>
-      <td>Shai Gilgeous-Alexander</td>
       <td>Trae Young</td>
+      <td>Gordon Hayward</td>
+      <td>Mitchell Robinson</td>
+      <td>Fred VanVleet</td>
+      <td>Fred VanVleet</td>
     </tr>
     <tr>
       <th>40</th>
-      <td>Mitchell Robinson</td>
-      <td>Fred VanVleet</td>
-      <td>T.J. Warren</td>
-      <td>Trae Young</td>
-      <td>Stephen Curry</td>
+      <td>Kyle Lowry</td>
+      <td>Kyle Lowry</td>
+      <td>Domantas Sabonis</td>
+      <td>Gordon Hayward</td>
+      <td>Kristaps Porzingis</td>
     </tr>
     <tr>
       <th>41</th>
-      <td>Stephen Curry</td>
+      <td>T.J. Warren</td>
       <td>Jonas Valanciunas</td>
-      <td>Mitchell Robinson</td>
-      <td>Mitchell Robinson</td>
-      <td>Jonas Valanciunas</td>
+      <td>Gordon Hayward</td>
+      <td>Kyle Lowry</td>
+      <td>Trae Young</td>
     </tr>
     <tr>
       <th>42</th>
+      <td>Mitchell Robinson</td>
+      <td>Domantas Sabonis</td>
+      <td>Kristaps Porzingis</td>
       <td>Jonas Valanciunas</td>
-      <td>Trae Young</td>
-      <td>Jonas Valanciunas</td>
-      <td>Jonas Valanciunas</td>
-      <td>Gordon Hayward</td>
+      <td>Kyle Lowry</td>
     </tr>
     <tr>
       <th>43</th>
-      <td>Dejounte Murray</td>
-      <td>Dejounte Murray</td>
-      <td>Fred VanVleet</td>
-      <td>Paul George</td>
-      <td>Paul George</td>
+      <td>Ricky Rubio</td>
+      <td>Mitchell Robinson</td>
+      <td>Ricky Rubio</td>
+      <td>Kristaps Porzingis</td>
+      <td>T.J. Warren</td>
     </tr>
     <tr>
       <th>44</th>
-      <td>Paul George</td>
-      <td>Gordon Hayward</td>
-      <td>Kelly Oubre</td>
+      <td>Zach LaVine</td>
       <td>Ricky Rubio</td>
-      <td>Fred VanVleet</td>
+      <td>T.J. Warren</td>
+      <td>Paul George</td>
+      <td>Jonas Valanciunas</td>
     </tr>
     <tr>
       <th>45</th>
-      <td>T.J. Warren</td>
+      <td>Pascal Siakam</td>
       <td>Paul George</td>
-      <td>Trae Young</td>
-      <td>Fred VanVleet</td>
-      <td>Zach LaVine</td>
+      <td>Jonas Valanciunas</td>
+      <td>Ricky Rubio</td>
+      <td>Ricky Rubio</td>
     </tr>
     <tr>
       <th>46</th>
-      <td>Trae Young</td>
-      <td>Kelly Oubre</td>
-      <td>Ricky Rubio</td>
       <td>Dejounte Murray</td>
-      <td>Kelly Oubre</td>
+      <td>Tobias Harris</td>
+      <td>Paul George</td>
+      <td>T.J. Warren</td>
+      <td>Paul George</td>
     </tr>
     <tr>
       <th>47</th>
-      <td>Ricky Rubio</td>
+      <td>Kristaps Porzingis</td>
       <td>Zach LaVine</td>
+      <td>Dejounte Murray</td>
       <td>Tobias Harris</td>
       <td>Tobias Harris</td>
-      <td>T.J. Warren</td>
     </tr>
     <tr>
       <th>48</th>
-      <td>Tobias Harris</td>
-      <td>Tobias Harris</td>
-      <td>Dejounte Murray</td>
-      <td>Kelly Oubre</td>
-      <td>Dejounte Murray</td>
+      <td>Paul George</td>
+      <td>Robert Covington</td>
+      <td>Jamal Murray</td>
+      <td>Nerlens Noel</td>
+      <td>Jamal Murray</td>
     </tr>
     <tr>
       <th>49</th>
-      <td>Robert Covington</td>
-      <td>Ricky Rubio</td>
-      <td>Zach LaVine</td>
-      <td>Zach LaVine</td>
       <td>Jamal Murray</td>
+      <td>T.J. Warren</td>
+      <td>Nerlens Noel</td>
+      <td>Dejounte Murray</td>
+      <td>Dejounte Murray</td>
     </tr>
     <tr>
       <th>50</th>
-      <td>Zach LaVine</td>
-      <td>T.J. Warren</td>
       <td>Robert Covington</td>
-      <td>T.J. Warren</td>
-      <td>Tobias Harris</td>
+      <td>Donovan Mitchell</td>
+      <td>Robert Covington</td>
+      <td>Mikal Bridges</td>
+      <td>Robert Covington</td>
     </tr>
     <tr>
       <th>51</th>
+      <td>OG Anunoby</td>
+      <td>Nerlens Noel</td>
+      <td>Zach LaVine</td>
+      <td>Myles Turner</td>
       <td>Kelly Oubre</td>
-      <td>Robert Covington</td>
-      <td>Will Barton</td>
-      <td>Robert Covington</td>
-      <td>Ricky Rubio</td>
     </tr>
     <tr>
       <th>52</th>
-      <td>Donovan Mitchell</td>
-      <td>Nerlens Noel</td>
-      <td>De'Aaron Fox</td>
       <td>Kemba Walker</td>
-      <td>Will Barton</td>
+      <td>Norman Powell</td>
+      <td>Kris Dunn</td>
+      <td>Zach LaVine</td>
+      <td>Nerlens Noel</td>
     </tr>
     <tr>
       <th>53</th>
+      <td>Kelly Oubre</td>
       <td>Jamal Murray</td>
+      <td>Kelly Oubre</td>
       <td>Jamal Murray</td>
-      <td>Paul George</td>
-      <td>Myles Turner</td>
-      <td>Robert Covington</td>
+      <td>Zach LaVine</td>
     </tr>
     <tr>
       <th>54</th>
-      <td>Marcus Smart</td>
-      <td>Donovan Mitchell</td>
-      <td>Nerlens Noel</td>
+      <td>Jarrett Allen</td>
+      <td>Kelly Oubre</td>
       <td>Will Barton</td>
-      <td>Nerlens Noel</td>
+      <td>Kelly Oubre</td>
+      <td>Myles Turner</td>
     </tr>
     <tr>
       <th>55</th>
-      <td>Steven Adams</td>
-      <td>Montrezl Harrell</td>
-      <td>Jamal Murray</td>
       <td>Norman Powell</td>
-      <td>Kemba Walker</td>
+      <td>Will Barton</td>
+      <td>Tobias Harris</td>
+      <td>Derrick Favors</td>
+      <td>Mikal Bridges</td>
     </tr>
     <tr>
       <th>56</th>
-      <td>Mikal Bridges</td>
-      <td>Will Barton</td>
-      <td>Steven Adams</td>
-      <td>De'Aaron Fox</td>
-      <td>Jarrett Allen</td>
+      <td>Donovan Mitchell</td>
+      <td>Daniel Theis</td>
+      <td>Myles Turner</td>
+      <td>Robert Covington</td>
+      <td>Norman Powell</td>
     </tr>
     <tr>
       <th>57</th>
-      <td>Nerlens Noel</td>
-      <td>Myles Turner</td>
+      <td>Elfrid Payton</td>
+      <td>Brook Lopez</td>
       <td>Norman Powell</td>
-      <td>Jamal Murray</td>
-      <td>Steven Adams</td>
+      <td>Norman Powell</td>
+      <td>Eric Bledsoe</td>
     </tr>
     <tr>
       <th>58</th>
-      <td>Derrick Favors</td>
+      <td>Will Barton</td>
+      <td>Dejounte Murray</td>
       <td>Mikal Bridges</td>
-      <td>Myles Turner</td>
-      <td>Steven Adams</td>
-      <td>Mikal Bridges</td>
+      <td>Daniel Theis</td>
+      <td>Marcus Smart</td>
     </tr>
     <tr>
       <th>59</th>
-      <td>Norman Powell</td>
-      <td>CJ McCollum</td>
-      <td>Jarrett Allen</td>
-      <td>Jarrett Allen</td>
-      <td>CJ McCollum</td>
+      <td>Nerlens Noel</td>
+      <td>Mikal Bridges</td>
+      <td>Brook Lopez</td>
+      <td>Kemba Walker</td>
+      <td>Donovan Mitchell</td>
     </tr>
     <tr>
       <th>60</th>
-      <td>Montrezl Harrell</td>
-      <td>Norman Powell</td>
-      <td>Mikal Bridges</td>
-      <td>Jaylen Brown</td>
-      <td>Norman Powell</td>
+      <td>Kris Dunn</td>
+      <td>Derrick Favors</td>
+      <td>Derrick Favors</td>
+      <td>Donovan Mitchell</td>
+      <td>Kris Dunn</td>
     </tr>
     <tr>
       <th>61</th>
+      <td>De'Aaron Fox</td>
       <td>Kemba Walker</td>
-      <td>Derrick Favors</td>
       <td>Donovan Mitchell</td>
-      <td>Eric Bledsoe</td>
-      <td>Jaylen Brown</td>
+      <td>OG Anunoby</td>
+      <td>Al Horford</td>
     </tr>
     <tr>
       <th>62</th>
-      <td>Daniel Theis</td>
+      <td>Tobias Harris</td>
+      <td>Al Horford</td>
+      <td>Kemba Walker</td>
+      <td>Brook Lopez</td>
       <td>OG Anunoby</td>
-      <td>OG Anunoby</td>
-      <td>Nerlens Noel</td>
-      <td>Myles Turner</td>
     </tr>
     <tr>
       <th>63</th>
-      <td>Eric Bledsoe</td>
-      <td>Kemba Walker</td>
-      <td>Brook Lopez</td>
-      <td>Donovan Mitchell</td>
-      <td>Donovan Mitchell</td>
+      <td>Montrezl Harrell</td>
+      <td>Malcolm Brogdon</td>
+      <td>Brandon Clarke</td>
+      <td>Jabari Parker</td>
+      <td>Jarrett Allen</td>
     </tr>
     <tr>
       <th>64</th>
-      <td>Myles Turner</td>
+      <td>Brook Lopez</td>
       <td>Jarrett Allen</td>
-      <td>Malcolm Brogdon</td>
       <td>OG Anunoby</td>
-      <td>OG Anunoby</td>
+      <td>Will Barton</td>
+      <td>Brook Lopez</td>
     </tr>
     <tr>
       <th>65</th>
-      <td>Jaylen Brown</td>
-      <td>Jaylen Brown</td>
-      <td>Jaylen Brown</td>
-      <td>Daniel Theis</td>
+      <td>Eric Bledsoe</td>
+      <td>Jabari Parker</td>
+      <td>Danilo Gallinari</td>
+      <td>Steven Adams</td>
       <td>Montrezl Harrell</td>
     </tr>
     <tr>
       <th>66</th>
-      <td>Will Barton</td>
-      <td>De'Aaron Fox</td>
       <td>Derrick Favors</td>
-      <td>Derrick Favors</td>
-      <td>Jeremy Lamb</td>
+      <td>Kris Dunn</td>
+      <td>Eric Bledsoe</td>
+      <td>Al Horford</td>
+      <td>Daniel Theis</td>
     </tr>
     <tr>
       <th>67</th>
-      <td>OG Anunoby</td>
+      <td>Marcus Smart</td>
       <td>Eric Bledsoe</td>
-      <td>Eric Bledsoe</td>
-      <td>Montrezl Harrell</td>
+      <td>Jaylen Brown</td>
+      <td>Kris Dunn</td>
       <td>Derrick Favors</td>
     </tr>
     <tr>
       <th>68</th>
-      <td>De'Aaron Fox</td>
+      <td>Al Horford</td>
+      <td>Myles Turner</td>
+      <td>Derrick Jones</td>
       <td>Marcus Smart</td>
-      <td>Kemba Walker</td>
-      <td>Brook Lopez</td>
-      <td>Eric Bledsoe</td>
+      <td>Jeremy Lamb</td>
     </tr>
     <tr>
       <th>69</th>
-      <td>Jeremy Lamb</td>
-      <td>Jabari Parker</td>
-      <td>Kris Dunn</td>
-      <td>CJ McCollum</td>
-      <td>Al Horford</td>
+      <td>Steven Adams</td>
+      <td>Marcus Smart</td>
+      <td>Montrezl Harrell</td>
+      <td>Eric Bledsoe</td>
+      <td>Kemba Walker</td>
     </tr>
     <tr>
       <th>70</th>
-      <td>Jarrett Allen</td>
-      <td>Steven Adams</td>
-      <td>Elfrid Payton</td>
       <td>Mikal Bridges</td>
+      <td>Derrick Rose</td>
       <td>Jabari Parker</td>
+      <td>Derrick Jones</td>
+      <td>Jaylen Brown</td>
     </tr>
     <tr>
       <th>71</th>
-      <td>Aaron Gordon</td>
-      <td>Daniel Theis</td>
-      <td>CJ McCollum</td>
-      <td>Jabari Parker</td>
-      <td>De'Aaron Fox</td>
+      <td>Myles Turner</td>
+      <td>Jeremy Lamb</td>
+      <td>Malcolm Brogdon</td>
+      <td>Brandon Clarke</td>
+      <td>Will Barton</td>
     </tr>
     <tr>
       <th>72</th>
-      <td>Al Horford</td>
-      <td>Derrick Rose</td>
-      <td>Jabari Parker</td>
-      <td>Kris Dunn</td>
-      <td>Daniel Theis</td>
+      <td>Jeremy Lamb</td>
+      <td>Brandon Clarke</td>
+      <td>Jarrett Allen</td>
+      <td>De'Aaron Fox</td>
+      <td>De'Aaron Fox</td>
     </tr>
     <tr>
       <th>73</th>
-      <td>CJ McCollum</td>
-      <td>Andrew Wiggins</td>
-      <td>Montrezl Harrell</td>
-      <td>Al Horford</td>
       <td>Brandon Clarke</td>
+      <td>De'Aaron Fox</td>
+      <td>De'Aaron Fox</td>
+      <td>CJ McCollum</td>
+      <td>CJ McCollum</td>
     </tr>
     <tr>
       <th>74</th>
-      <td>Kris Dunn</td>
-      <td>Kris Dunn</td>
-      <td>Al Horford</td>
+      <td>Ja Morant</td>
+      <td>OG Anunoby</td>
+      <td>Daniel Theis</td>
+      <td>Jarrett Allen</td>
       <td>Malcolm Brogdon</td>
-      <td>Kris Dunn</td>
     </tr>
     <tr>
       <th>75</th>
       <td>Jabari Parker</td>
-      <td>Zion Williamson</td>
-      <td>Brandon Clarke</td>
-      <td>Jeremy Lamb</td>
-      <td>Derrick Rose</td>
+      <td>Jaylen Brown</td>
+      <td>Steven Adams</td>
+      <td>Nemanja Bjelica</td>
+      <td>Jabari Parker</td>
     </tr>
     <tr>
       <th>76</th>
-      <td>Brandon Clarke</td>
-      <td>Nemanja Bjelica</td>
-      <td>Marcus Smart</td>
-      <td>Marcus Smart</td>
-      <td>Marcus Smart</td>
+      <td>Daniel Theis</td>
+      <td>Steven Adams</td>
+      <td>Derrick Rose</td>
+      <td>Montrezl Harrell</td>
+      <td>Steven Adams</td>
     </tr>
     <tr>
       <th>77</th>
-      <td>Malcolm Brogdon</td>
-      <td>Brook Lopez</td>
-      <td>Daniel Theis</td>
-      <td>Lonzo Ball</td>
-      <td>Brook Lopez</td>
+      <td>CJ McCollum</td>
+      <td>Montrezl Harrell</td>
+      <td>Al Horford</td>
+      <td>Derrick Rose</td>
+      <td>Brandon Clarke</td>
     </tr>
     <tr>
       <th>78</th>
-      <td>Rui Hachimura</td>
-      <td>Ja Morant</td>
-      <td>Nemanja Bjelica</td>
-      <td>Danilo Gallinari</td>
+      <td>Derrick Rose</td>
       <td>Elfrid Payton</td>
+      <td>Evan Fournier</td>
+      <td>Jeremy Lamb</td>
+      <td>Derrick Rose</td>
     </tr>
     <tr>
       <th>79</th>
-      <td>Donte DiVincenzo</td>
-      <td>Brandon Clarke</td>
-      <td>Lonzo Ball</td>
       <td>Derrick Jones</td>
-      <td>Andrew Wiggins</td>
+      <td>CJ McCollum</td>
+      <td>DeAndre Jordan</td>
+      <td>Malcolm Brogdon</td>
+      <td>Danilo Gallinari</td>
     </tr>
     <tr>
       <th>80</th>
+      <td>Draymond Green</td>
+      <td>Willie Cauley-Stein</td>
+      <td>Marcus Smart</td>
       <td>Lonzo Ball</td>
-      <td>Malcolm Brogdon</td>
-      <td>Jeremy Lamb</td>
-      <td>Zion Williamson</td>
-      <td>Danilo Gallinari</td>
+      <td>Alec Burks</td>
     </tr>
     <tr>
       <th>81</th>
-      <td>Brook Lopez</td>
-      <td>Al Horford</td>
+      <td>Donte DiVincenzo</td>
+      <td>Lonzo Ball</td>
+      <td>CJ McCollum</td>
+      <td>Danilo Gallinari</td>
       <td>Zion Williamson</td>
-      <td>Brandon Clarke</td>
-      <td>Malcolm Brogdon</td>
     </tr>
     <tr>
       <th>82</th>
-      <td>Wendell Carter</td>
       <td>Danilo Gallinari</td>
-      <td>Aaron Gordon</td>
-      <td>Andrew Wiggins</td>
-      <td>Zion Williamson</td>
+      <td>Derrick Jones</td>
+      <td>Jeremy Lamb</td>
+      <td>Jaylen Brown</td>
+      <td>Elfrid Payton</td>
     </tr>
     <tr>
       <th>83</th>
-      <td>Nemanja Bjelica</td>
-      <td>D'Angelo Russell</td>
-      <td>Andrew Wiggins</td>
-      <td>Derrick Rose</td>
-      <td>Kevin Love</td>
+      <td>Jaylen Brown</td>
+      <td>Alec Burks</td>
+      <td>Willie Cauley-Stein</td>
+      <td>Willie Cauley-Stein</td>
+      <td>Derrick Jones</td>
     </tr>
     <tr>
       <th>84</th>
-      <td>Serge Ibaka</td>
-      <td>Jeremy Lamb</td>
-      <td>Danilo Gallinari</td>
-      <td>Willie Cauley-Stein</td>
-      <td>Derrick Jones</td>
+      <td>D'Angelo Russell</td>
+      <td>Evan Fournier</td>
+      <td>Alec Burks</td>
+      <td>Alec Burks</td>
+      <td>Derrick White</td>
     </tr>
     <tr>
       <th>85</th>
-      <td>Thomas Bryant</td>
+      <td>Kevin Love</td>
+      <td>Danilo Gallinari</td>
       <td>Elfrid Payton</td>
-      <td>Donte DiVincenzo</td>
-      <td>Serge Ibaka</td>
-      <td>Nemanja Bjelica</td>
+      <td>Zion Williamson</td>
+      <td>Evan Fournier</td>
     </tr>
     <tr>
       <th>86</th>
-      <td>Derrick Jones</td>
-      <td>Rui Hachimura</td>
-      <td>DeAndre Jordan</td>
-      <td>Donte DiVincenzo</td>
-      <td>Aaron Gordon</td>
+      <td>Evan Fournier</td>
+      <td>Thomas Bryant</td>
+      <td>Derrick White</td>
+      <td>Elfrid Payton</td>
+      <td>Kevin Love</td>
     </tr>
     <tr>
       <th>87</th>
-      <td>Evan Fournier</td>
-      <td>Derrick Jones</td>
-      <td>Derrick White</td>
-      <td>Alec Burks</td>
-      <td>Willie Cauley-Stein</td>
+      <td>Collin Sexton</td>
+      <td>Draymond Green</td>
+      <td>Andrew Wiggins</td>
+      <td>DeAndre Jordan</td>
+      <td>Thomas Bryant</td>
     </tr>
     <tr>
       <th>88</th>
-      <td>Elfrid Payton</td>
-      <td>Donte DiVincenzo</td>
-      <td>Kevin Love</td>
-      <td>Elfrid Payton</td>
-      <td>Larry Nance</td>
+      <td>Malcolm Brogdon</td>
+      <td>Rui Hachimura</td>
+      <td>Ja Morant</td>
+      <td>D'Angelo Russell</td>
+      <td>Lonzo Ball</td>
     </tr>
     <tr>
       <th>89</th>
+      <td>Lonzo Ball</td>
       <td>Andrew Wiggins</td>
-      <td>Alec Burks</td>
-      <td>D'Angelo Russell</td>
-      <td>Larry Nance</td>
-      <td>Jaren Jackson</td>
+      <td>Nemanja Bjelica</td>
+      <td>Derrick White</td>
+      <td>Draymond Green</td>
     </tr>
     <tr>
       <th>90</th>
-      <td>Derrick Rose</td>
-      <td>Evan Fournier</td>
-      <td>Alec Burks</td>
+      <td>Larry Nance</td>
+      <td>Wendell Carter</td>
+      <td>Donte DiVincenzo</td>
+      <td>Donte DiVincenzo</td>
       <td>Nemanja Bjelica</td>
-      <td>D'Angelo Russell</td>
     </tr>
     <tr>
       <th>91</th>
-      <td>Zion Williamson</td>
-      <td>Draymond Green</td>
-      <td>Derrick Jones</td>
-      <td>DeAndre Jordan</td>
-      <td>Alec Burks</td>
+      <td>Delon Wright</td>
+      <td>D'Angelo Russell</td>
+      <td>Marquese Chriss</td>
+      <td>Evan Fournier</td>
+      <td>Andrew Wiggins</td>
     </tr>
     <tr>
       <th>92</th>
-      <td>Danuel House</td>
-      <td>Collin Sexton</td>
-      <td>Willie Cauley-Stein</td>
-      <td>Kevin Love</td>
-      <td>Donte DiVincenzo</td>
-    </tr>
-    <tr>
-      <th>93</th>
-      <td>Willie Cauley-Stein</td>
-      <td>Lonzo Ball</td>
-      <td>Draymond Green</td>
-      <td>Wendell Carter</td>
-      <td>Rui Hachimura</td>
-    </tr>
-    <tr>
-      <th>94</th>
-      <td>Marquese Chriss</td>
-      <td>Damion Lee</td>
-      <td>Thomas Bryant</td>
+      <td>Andrew Wiggins</td>
       <td>Markelle Fultz</td>
-      <td>Lonzo Ball</td>
-    </tr>
-    <tr>
-      <th>95</th>
-      <td>Danilo Gallinari</td>
-      <td>Larry Nance</td>
+      <td>Draymond Green</td>
       <td>Serge Ibaka</td>
-      <td>Ja Morant</td>
-      <td>Wendell Carter</td>
-    </tr>
-    <tr>
-      <th>96</th>
-      <td>Glenn Robinson</td>
-      <td>Willie Cauley-Stein</td>
-      <td>Evan Fournier</td>
-      <td>Thomas Bryant</td>
       <td>DeAndre Jordan</td>
     </tr>
     <tr>
-      <th>97</th>
-      <td>Collin Sexton</td>
-      <td>Tomas Satoransky</td>
-      <td>Rui Hachimura</td>
+      <th>93</th>
+      <td>Marquese Chriss</td>
+      <td>Kevin Love</td>
       <td>D'Angelo Russell</td>
+      <td>Patrick Beverley</td>
+      <td>Willie Cauley-Stein</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>Alec Burks</td>
+      <td>Larry Nance</td>
+      <td>Serge Ibaka</td>
+      <td>Ja Morant</td>
+      <td>Serge Ibaka</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>Jaren Jackson</td>
+      <td>Aaron Gordon</td>
+      <td>Lonzo Ball</td>
+      <td>Tomas Satoransky</td>
+      <td>Paul Millsap</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>Jae Crowder</td>
+      <td>Derrick White</td>
+      <td>Justin Holiday</td>
+      <td>Andrew Wiggins</td>
+      <td>Collin Sexton</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>Glenn Robinson</td>
+      <td>DeAndre Jordan</td>
+      <td>Rui Hachimura</td>
+      <td>Kevin Love</td>
       <td>Glenn Robinson</td>
     </tr>
     <tr>
       <th>98</th>
-      <td>Tomas Satoransky</td>
-      <td>Wendell Carter</td>
-      <td>Derrick Rose</td>
-      <td>Draymond Green</td>
-      <td>Draymond Green</td>
+      <td>DeAndre Jordan</td>
+      <td>Ja Morant</td>
+      <td>Glenn Robinson</td>
+      <td>Larry Nance</td>
+      <td>Aaron Gordon</td>
     </tr>
     <tr>
       <th>99</th>
-      <td>Derrick White</td>
-      <td>DeAndre Jordan</td>
-      <td>Ja Morant</td>
+      <td>Nemanja Bjelica</td>
+      <td>Nemanja Bjelica</td>
+      <td>Wendell Carter</td>
+      <td>Marquese Chriss</td>
       <td>Rui Hachimura</td>
-      <td>Serge Ibaka</td>
     </tr>
   </tbody>
 </table>
