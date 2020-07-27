@@ -2,26 +2,6 @@
 
 In Part 1, we ran simulations to see which players are most valuable to a team and increase category win percentage. Now we will need to create some additional functions so that we are able to draft the best available player that will increase our win percentage. In order to do this, we need to update the create_team function to factor in teams in the league player choices already, what positions they play and what positions they still need to fill. 
 
-
-```python
-#hide
-from IPython.display import clear_output
-from yahoo_oauth import OAuth2
-import yahoo_fantasy_api as yfa
-import pandas as pd
-import numpy as np
-import timeit
-import seaborn as sns
-import multiprocessing
-
-pd.options.display.max_columns = None
-%matplotlib inline
-```
-
-    [2020-07-20 14:53:20,967 DEBUG] [matplotlib.pyplot.pyplot.switch_backend] Loaded backend module://ipykernel.pylab.backend_inline version unknown.
-    [2020-07-20 14:53:20,967 DEBUG] [matplotlib.pyplot.pyplot.switch_backend] Loaded backend module://ipykernel.pylab.backend_inline version unknown.
-    
-
 ### Filling a team's roster positions
 When a team drafts a player, the roster should fill from most specific roster spot to the more general UTIL roster spot where any player can fill. Teams will fill up roster spots based on a player being the least flexible to the most flexible. For eg. If a player only plays SG, then you would want them to fill the specific SG position over someone who plays PG, SG, SF, PF. This allows more flexibility for the rest of the roster.
 
