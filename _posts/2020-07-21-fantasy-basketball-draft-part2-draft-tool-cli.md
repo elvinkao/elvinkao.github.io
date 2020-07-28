@@ -239,10 +239,11 @@ def run_simulations(self, num_teams):
 ```
 
 ### Test Run
-Unfortunately, because of Covid, a lot of the mock nba fantasy draft applications are currently down. I have did a short test run.
-> youtube: https://youtu.be/O2Cq3FFWLkA
+I have tried a test run using Yahoo NBA fantasy mock draft simulator. The default settings are 30 second draft time. It happens really quick and in 30 seconds there is not enough time to get enough simulations. During the test run, I also always chose the player with the highest category win percentage and I failed to look at some of the low samples I had received. This ended with some very poor results.
 
-I drafted the players in order in last post with 10,000 simulations in a 6 person league. I have set the time limit to 30 seconds and with the 2nd pick, the best player in 201 simulations was Ben Simmons with a category win percentage of 72% against random sample for other teams. Then going through the ranks under 10,000 simulations, the 3rd pick with 151 simulations was Mikal Bridges with category win percentage of 43%. That would mean I would now have a losing winning percentage. That changed rather quickly. It is clear that running under simulations under this current format is just not fast enough to choose the right person and under small sample, at pick 2, choosing the wrong person was very consequential. This tool will be more effective with 2 minute draft times and during later stages when optimizing for player categories. 
+> youtube: https://youtu.be/PIxy5Dvw_Ys
+
+I have tested the tool going in the same order as Yahoo did with a 2 minutes to run simulations and tool worked well.
 
 ### Final Thoughts
 I got to learn some interesting tricks with concurrent.futures to parallel process and workarounds when time constrained and you want to run as much parallel simulations as possible. It was also fun to play around with the CLI tool to possibly make some small applications in the future.
